@@ -4,6 +4,11 @@
 /node_modules
 /.pnp
 .pnp.js
+/constants
+/service
+/store
+/slice
+/ui
 
 # testing
 /coverage
