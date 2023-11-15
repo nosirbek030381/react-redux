@@ -33,7 +33,7 @@ const Register = () => {
 		if (loggedIn) {
 			navigate('/');
 		}
-	});
+	}, [loggedIn]);
 
 	return (
 		<div className='text-center mt-5'>
