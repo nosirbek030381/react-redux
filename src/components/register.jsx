@@ -22,7 +22,7 @@ const Register = () => {
 			console.log(response);
 			dispatch(signUserSuccess());
 		} catch (error) {
-			dispatch(signUserFailure());
+			dispatch(signUserFailure(error.response.data.errors));
 		}
 	};
 

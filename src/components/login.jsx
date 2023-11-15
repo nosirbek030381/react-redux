@@ -4,7 +4,7 @@ import { icon } from '../constants';
 import AuthService from '../service/auth';
 import { signUserFailure, signUserStart, signUserSuccess } from '../slice/auth';
 import { Input } from '../ui';
-// import ValidationError from './validation-error';
+import ValidationError from './validation-error';
 
 const Login = () => {
 	const [email, setEmail] = useState('');
@@ -22,7 +22,7 @@ const Login = () => {
 			console.log(response);
 			dispatch(signUserSuccess());
 		} catch (error) {
-			dispatch(signUserFailure());
+			dispatch(signUserFailure(error.response.data.errors));
 		}
 	};
 
@@ -32,7 +32,7 @@ const Login = () => {
 				<form action=''>
 					<img src={icon} className='mb-3' alt='Icon' width={72} height={57} />
 					<h1 className='h3 mb-3 fw-normal'>Please sign in</h1>
-					{/* <ValidationError /> */}
+					<ValidationError />
 
 					<Input label={'Email address'} type={'email'} state={email} setState={setEmail} />
 					<Input label={'Password'} type={'password'} state={password} setState={setPassword} />
