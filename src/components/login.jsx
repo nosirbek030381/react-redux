@@ -1,29 +1,29 @@
 import { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { icon } from '../constants';
-// import AuthService from '../service/auth';
-// import { signUserFailure, signUserStart, signUserSuccess } from '../slice/auth';
+import AuthService from '../service/auth';
+import { signUserFailure, signUserStart, signUserSuccess } from '../slice/auth';
 import { Input } from '../ui';
 // import ValidationError from './validation-error';
 
 const Login = () => {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
-	// const dispatch = useDispatch();
+	const dispatch = useDispatch();
 	const { isLoading } = useSelector(state => state.auth);
 
 	const loginHandler = async e => {
 		e.preventDefault();
-		// dispatch(signUserStart());
-		// const user = { email, password };
+		dispatch(signUserStart());
+		const user = { email, password };
 
-		// try {
-		// 	const response = await AuthService.userLogin(user);
-		// 	console.log(response);
-		// 	dispatch(signUserSuccess());
-		// } catch (error) {
-		// 	dispatch(signUserFailure());
-		// }
+		try {
+			const response = await AuthService.userLogin(user);
+			console.log(response);
+			dispatch(signUserSuccess());
+		} catch (error) {
+			dispatch(signUserFailure());
+		}
 	};
 
 	return (
