@@ -7,9 +7,9 @@ const App = () => {
 			<Navbar />
 			<div className='container'>
 				<Routes>
+					<Route path='/' element={<Main />} />
 					<Route path='/login' element={<Login />} />
 					<Route path='/register' element={<Register />} />
-					<Route path='/main' element={<Main />} />
 				</Routes>
 			</div>
 		</div>
