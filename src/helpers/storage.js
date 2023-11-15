@@ -13,3 +13,11 @@ export const getItem = key => {
 		console.log('error user no found');
 	}
 };
+
+export const removeItem = key => {
+	try {
+		localStorage.removeItem(key);
+	} catch (error) {
+		console.log('error user no found');
+	}
+};
