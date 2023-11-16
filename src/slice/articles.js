@@ -29,9 +29,8 @@ const articlesSlice = createSlice({
 			state.isLoading = false;
 			state.articleDetail = action.payload;
 		},
-		getArticleDetailFailure: (state, action) => {
+		getArticleDetailFailure: state => {
 			state.isLoading = false;
-			state.error = action.payload;
 		},
 	},
 });
