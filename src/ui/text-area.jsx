@@ -7,6 +7,7 @@ const TextArea = ({ label, state, setState, height = '100px' }) => {
 					placeholder={label}
 					id='floatingTextarea2'
 					style={{ height: height }}
+					onChange={e => setState(e.target.value)}
 				></textarea>
 				<label htmlFor='floatingTextarea2'>{label}</label>
 			</div>
