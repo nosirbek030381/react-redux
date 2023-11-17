@@ -1,3 +1,4 @@
+export { default as ArticleCard } from './article-card';
 export { default as ArticleDetail } from './article-detail';
 export { default as CreateArticle } from './create-article';
 export { default as EditArticle } from './edit-article';
