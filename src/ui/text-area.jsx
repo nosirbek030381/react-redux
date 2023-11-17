@@ -6,6 +6,7 @@ const TextArea = ({ label, state, setState, height = '100px' }) => {
 					className='form-control'
 					placeholder={label}
 					id='floatingTextarea2'
+					value={state}
 					style={{ height: height }}
 					onChange={e => setState(e.target.value)}
 				></textarea>

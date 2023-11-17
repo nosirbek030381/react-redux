@@ -4,6 +4,7 @@ import { Input, TextArea } from '../ui';
 const ArticleForm = props => {
 	const { isLoading } = useSelector(state => state.article);
 	const { title, setTitle, description, setDescription, body, setBody, formSumbit } = props;
+
 	return (
 		<div>
 			<form onSubmit={formSumbit}>

@@ -71,7 +71,11 @@ const Main = () => {
 											</button>
 											{loggedIn && user.username === item.author.username && (
 												<>
-													<button type='button' className='btn btn-sm btn-outline-secondary'>
+													<button
+														type='button'
+														onClick={() => navigate(`/edit-article/${item.slug}`)}
+														className='btn btn-sm btn-outline-secondary'
+													>
 														Edit
 													</button>
 													<button
